@@ -1,161 +1,146 @@
-/* Globales */
+/* === Globales === */
 
-:root{
+:root {
     --buttonColorOne: #ffbf69;
     --buttonColorTwo: #cbf3f0;
-    --bg-footer:#333333;
+    --bg-footer: #333333;
     --bg-gray: #a1c4c1;
     --FirstFont: "Arial";
-
 }
 
 html {
     box-sizing: border-box;
-    font-size: 62.5%; 
+    font-size: 62.5%;
 }
 
 *, *:before, *:after {
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0;
     font-size: 1.6rem;
     line-height: 1.5;
     font-family: var(--FirstFont);
 }
-p {
-    font-size: 1.8rem;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-}
+
 a {
     text-decoration: none;
     color: inherit;
 }
+
 img {
     width: 100%;
 }
-.contenedor {
-    max-width: 120rem;
-    margin: 0 auto;
-}
+
 h1, h2, h3 {
     text-align: center;
     margin: 0;
 }
+
 h1 {
     font-size: 18rem;
     line-height: .9;
 }
+
 h2 {
     font-size: 3.2rem;
 }
+
 h3 {
     font-size: 2.4rem;
 }
-button{
+
+button {
     width: 30%;
     border: none;
     border-radius: 5px;
-}
-button:hover{
     cursor: pointer;
-    transition: all .5s;
-    
+    transition: all 0.5s;
 }
 
-/*Header */
-
-header{
-    font-size: 2rem;
-    padding: .5rem;
+p {
+    font-size: 1.8rem;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/*Section 1 */
+/* === Header === */
 
-/*Nav*/
-.nav-header{
+.hero__nav {
     margin-right: 20rem;
     display: flex;
     justify-content: space-between;
-    
 }
 
-.nav-left{
+.hero__nav-left {
     list-style: none;
     margin: auto 2rem;
 }
-.nav-right{
+
+.hero__nav-right {
     list-style: none;
     display: flex;
     gap: 10rem;
 }
 
-.link-nav{
-    transition: all .5s;
+.hero__link {
+    transition: all 0.5s;
     display: inline-block;
 }
-.link-nav:hover, .content button:hover, .carousel-item button:hover{
+
+.hero__link:hover,
+.hero__content button:hover,
+.carousel__item button:hover {
     transform: scale(1.2);
 }
 
+/* === Hero === */
 
-/*background*/
-.hero{
+.hero {
     height: 100vh;
     background-image: url(./img/background.png);
-    background-size:contain;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     background-color: #ffbf69;
-
 }
 
-/*Content*/
-.content{
+.hero__content {
     display: flex;
-    text-align: left;
-    width: 50%;
     flex-direction: column;
+    width: 50%;
     padding: 15rem 7rem;
-    color: #cbf3f0;
-    
-    
-
+    color: var(--buttonColorTwo);
+    text-align: left;
 }
 
-/*Button*/
-.content button{
-
+.hero__content button {
     height: 5rem;
     margin-top: 8rem;
     font-size: 2.5rem;
-
 }
 
-/*Section 2*/
+/* === About Section === */
 
-#sect-2{
+.about {
     text-align: center;
     padding: 8rem 20rem;
 }
 
-#sect-2 h2{
+.about h2 {
     line-height: 3;
 }
 
+/* === Carousel Section === */
 
-/*Section 3*/
-
-
-#sect-3 {
-    background-color:var(--bg-gray) ;
+.carousel {
+    background-color: var(--bg-gray);
     padding: 8rem;
     text-align: center;
 }
 
-.carousel-container {
+.carousel__container {
     position: relative;
     width: 90%;
     max-width: 800px;
@@ -163,31 +148,30 @@ header{
     overflow: hidden;
 }
 
-.carousel-track {
+.carousel__track {
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
 
-.carousel-item {
+.carousel__item {
     min-width: 100%;
-    box-sizing: border-box;
     padding: 2rem;
+    box-sizing: border-box;
 }
 
-.carousel-item button{
-    height: 3rem;
-    background-color: var(--buttonColorOne);
-}
-
-
-.carousel-item img {
+.carousel__item img {
     width: 100%;
     height: 200px;
     object-fit: contain;
     margin-bottom: 1rem;
 }
 
-.carousel-btn {
+.carousel__item button {
+    height: 3rem;
+    background-color: var(--buttonColorOne);
+}
+
+.carousel__btn {
     width: 5rem;
     height: 6rem;
     position: absolute;
@@ -200,22 +184,19 @@ header{
     cursor: pointer;
     padding: 1rem;
     z-index: 1;
-
 }
 
-.carousel-btn.left {
+.carousel__btn--left {
     left: 0;
 }
 
-.carousel-btn.right {
+.carousel__btn--right {
     right: 0;
 }
 
+/* === Rules Section === */
 
-/*Section 4*/
-
-
-#sect-4{
+.rules {
     display: grid;
     grid-template-columns: 2fr 1fr;
     padding: 5rem;
@@ -225,30 +206,26 @@ header{
     background-position: center;
 }
 
-.text-content{
-    grid-column:1/ 2;
+.rules__text {
+    grid-column: 1/2;
     grid-row: 1/2;
     margin: auto 0;
     padding: 10rem;
-    
-
-}
-.text-content h2{
     text-align: left;
 }
 
-.img-content{
-    grid-row: 1/2;
+.rules__img {
     grid-column: 2/3;
+    grid-row: 1/2;
 }
 
+/* === Footer === */
 
-/*Footer*/
-
-.nav-footer{
-    background-color:var(--bg-footer) ;
+.footer__nav {
+    background-color: var(--bg-footer);
 }
-.menu-footer{
+
+.footer__menu {
     display: flex;
     justify-content: space-around;
     margin: 0;
@@ -257,44 +234,41 @@ header{
     list-style: none;
     font-weight: 700;
 }
-    
 
-    /* ========== MEDIA QUERIES ========== */
+/* === Media Queries === */
 
-/* Tablets (768px o menos) */
+/* Tablets */
 @media (max-width: 768px) {
-  /* Navegación */
-    .nav-header {
+    .hero__nav {
         flex-direction: column;
         align-items: center;
         margin-right: 0;
         gap: 2rem;
     }
 
-    .nav-right {
+    .hero__nav-right {
         flex-direction: column;
         gap: 2rem;
         align-items: center;
     }
 
-    .nav-left {
+    .hero__nav-left {
         margin: 0;
     }
 
-  /* Hero */
     .hero {
         background-size: cover;
         background-position: top;
     }
 
-    .content {
+    .hero__content {
         width: 90%;
         padding: 5rem 2rem;
         text-align: center;
         align-items: center;
     }
 
-    .content button {
+    .hero__content button {
         width: 80%;
         font-size: 2rem;
     }
@@ -303,34 +277,31 @@ header{
         font-size: 10rem;
     }
 
-  /* Section 2 */
-    #sect-2 {
+    .about {
         padding: 4rem 5rem;
     }
 
-  /* Section 4 */
-    #sect-4 {
+    .rules {
         grid-template-columns: 1fr;
         text-align: center;
     }
 
-    .text-content {
+    .rules__text {
         padding: 5rem 2rem;
     }
 
-    .img-content {
+    .rules__img {
         margin-top: 3rem;
     }
 
-  /* Footer */
-    .menu-footer {
+    .footer__menu {
         flex-direction: column;
         gap: 1rem;
         text-align: center;
     }
 }
 
-/* Celulares (480px o menos) */
+/* Celulares */
 @media (max-width: 480px) {
     h1 {
         font-size: 6rem;
@@ -340,72 +311,63 @@ header{
     h2 {
         font-size: 2.4rem;
     }
-    .nav-right{
+
+    .hero__nav-right {
         padding: 0;
     }
-    .content {
+
+    .hero__content {
         padding: 3rem 1rem;
     }
-    .content p{
+
+    .hero__content p {
         color: var(--bg-footer);
     }
 
-    .content button {
+    .hero__content button {
         width: 100%;
         font-size: 1.8rem;
         margin-top: 4rem;
     }
-    
 
-    #sect-2 {
+    .about {
         padding: 3rem 2rem;
     }
 
-    #sect-3 {
+    .carousel {
         padding: 4rem 1rem;
     }
 
-    .carousel-btn {
+    .carousel__btn {
         font-size: 2rem;
         width: 3rem;
         height: 3rem;
         padding: 0.5rem;
     }
 
-    .text-content {
-        padding: 2rem;
-    }
-
-    .carousel-item button {
+    .carousel__item button {
         width: 100%;
         font-size: 1.6rem;
     }
 
-    .menu-footer {
-        flex-direction: column;
-        gap: 1rem;
-        font-size: 1.4rem;
+    .rules {
+        grid-template-rows: repeat(2, 1fr);
     }
-    #sect-4{
-        display: grid;
-        grid-template-rows: repeat(2 1fr);
-    }
-    .text-content{
-        padding: 0;
 
+    .rules__text {
+        padding: 2rem;
     }
-    .text-content h2{
+
+    .rules__text h2 {
         text-align: center;
     }
-    .img-content{
+
+    .rules__img {
         grid-column: 1/2;
         grid-row: 2/3;
     }
+
+    .footer__menu {
+        font-size: 1.4rem;
+    }
 }
-
-
-
-
-
-
-

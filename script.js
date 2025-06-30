@@ -1,7 +1,7 @@
-const track = document.querySelector('.carousel-track');
+const track = document.querySelector('.carousel__track');
 const slides = Array.from(track.children);
-const prevBtn = document.querySelector('.carousel-btn.left');
-const nextBtn = document.querySelector('.carousel-btn.right');
+const prevBtn = document.querySelector('.carousel__btn--left');
+const nextBtn = document.querySelector('.carousel__btn--right');
 
 let currentSlide = 0;
 
@@ -17,20 +17,20 @@ function goToNextSlide() {
   updateCarousel();
 }
 
-// Función para ir al anterior slide
+// Función para ir al slide anterior
 function goToPrevSlide() {
   currentSlide = (currentSlide - 1 + slides.length) % slides.length;
   updateCarousel();
 }
 
-// Botones manuales
+// Eventos de botones
 nextBtn.addEventListener('click', goToNextSlide);
 prevBtn.addEventListener('click', goToPrevSlide);
 
 // Auto avance
 let autoSlide = setInterval(goToNextSlide, 3000);
 
-// Pausar auto-slide cuando el usuario usa botones
+// Reiniciar autoSlide al hacer click manual
 [nextBtn, prevBtn].forEach(btn => {
   btn.addEventListener('click', () => {
     clearInterval(autoSlide);
@@ -38,6 +38,8 @@ let autoSlide = setInterval(goToNextSlide, 3000);
   });
 });
 
-// Ajustar al redimensionar
+// Actualiza el tamaño al redimensionar
 window.addEventListener('resize', updateCarousel);
 
+// Inicializa el carrusel
+updateCarousel();
